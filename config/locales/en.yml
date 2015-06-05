@@ -1,12 +1,18 @@
 en:
   layouts:
     title: "Member Management System"
+    help: "Help"
+    about: "About"
+    contact: "Contact"
+    profile: "Profile"
+    setting: "Setting"
+    login: "Log in"
+    logout: "Logout"
     home:
       title: "Home"
       welcome: "Welcome to the Member Management System"
       info: "This is the home page for the test application."
-    help: "Help"
-    about: "About"
-    contact: "Contact"
-    login: "Login"
-
+  devise:
+    sessions:
+      user:
+        signed_in: "Logged in successfully!"
