@@ -97,7 +97,6 @@ footer {
   }
 }
 
-
 .dropdown {
   @extend .dropdown;
 }
@@ -142,3 +141,19 @@ aside {
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+
+.my-search-field {
+  width: 180px;
+  margin-left: 2px;
+}
+
+.my-search input{
+  border-radius: 3px;
+}
+
+.my-search {
+  margin-left: 36px;
+  a {
+    text-decoration: none;
+  }
+}

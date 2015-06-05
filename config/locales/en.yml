@@ -16,3 +16,20 @@ en:
     sessions:
       user:
         signed_in: "Logged in successfully!"
+
+  create: "Create"
+  search: "Search"
+  submit: "Submit"
+
+  skill:
+    title: "Skill"
+    create_skill: "Create new skill"
+    all: "All Skill"
+    create:
+      success: "Successfully create skill!"
+      danger: "Error"
+    destroy:
+      success: "Skill Deleted"
+    update:
+      success: "Successfully update skill!"
+      danger: "Error"
