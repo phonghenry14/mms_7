@@ -1,7 +1,19 @@
 jp:
   layouts:
+    title: "会員管理システム"
+    help: "サポート"
+    about: "当社について"
+    contact: "コンタクト"
+    profile: "プロフィール"
+    setting: "設定"
+    login: "サインイン"
+    logout: "ログアウト"
     home:
-    help:
-    about:
-    contact:
-    login:
+      title: "ホームページ"
+      welcome: "会員管理システムへようこそ"
+      info: "これはアプリケーションをテストするホームページです"
+  devise:
+    sessions:
+      user:
+        signed_in: "正常にログイン!"
+        

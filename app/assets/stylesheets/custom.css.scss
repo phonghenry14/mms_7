@@ -97,6 +97,11 @@ footer {
   }
 }
 
+
+.dropdown {
+  @extend .dropdown;
+}
+
 /* sidebar */
 
 aside {
