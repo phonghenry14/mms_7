@@ -1,4 +1,11 @@
 class ApplicationController < ActionController::Base
+
+  load_and_authorize_resource except: [:home, :help, :about, :contact], unless: :devise_controller?
+
+  rescue_from CanCan::AccessDenied do |expection|
+    redirect_to root_url, alert: expection.message
+  end
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   protect_from_forgery with: :exception
