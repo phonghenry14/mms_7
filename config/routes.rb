@@ -12,8 +12,13 @@ Rails.application.routes.draw do
     get "sign_up", to: "devise/registrations#new"
   end
 
+  resources :users do
+    resources :userskills
+    get 'assign' => 'userskills#new'
+  end
+
   namespace :admin do
     root "static_pages#home"
-    resources :skills, only: [:index, :create, :new, :destroy, :edit, :update]
+    resources :skills, except: [:show]
   end
 end

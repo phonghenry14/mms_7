@@ -33,3 +33,11 @@ en:
     update:
       success: "Successfully update skill!"
       danger: "Error"
+  userskill:
+    add: "Add skill to user"
+  user:
+    id: "User_id:"
+    name: "Name:"
+    email: "Email:"
+    skill: "Skill:"
+    add_skill: "Add skill"
