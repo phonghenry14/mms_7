@@ -1,0 +1,14 @@
+<% provide :title, t('skill.create_skill') %>
+<h1><%= t('skill.create_skill') %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @skill] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p><%= f.submit t('create'), class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
+</div>
