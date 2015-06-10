@@ -67,7 +67,11 @@ en:
       danger: "Error"
     all: "All Position"
     destroy:
-      success: "Skill Deleted"
+      success: "Position Deleted"
       confirm: "Are you sure?"
     name: "Name"
     abb: "Abbreviation"
+    update_skill: "Update position"
+    update:
+      success: "Successfully update position!"
+      danger: "Error"
