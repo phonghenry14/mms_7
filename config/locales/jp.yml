@@ -10,7 +10,8 @@ jp:
     logout: "ログアウト"
     home:
       title: "ホームページ"
-      list_user: "リスト ユーザー"      
+      list_user: "リスト ユーザー"
+      list_team: "リスト チーム"      
       welcome: "会員管理システムへようこそ"
       info: "これはアプリケーションをテストするホームページです"
   devise:

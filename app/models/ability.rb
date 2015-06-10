@@ -7,6 +7,7 @@ class Ability
       can :manage, User
       can :manage, Skill
       can :manage, Position
+      can :manage, Team
     else
       can :read, User
       can :update, User, id: user.id

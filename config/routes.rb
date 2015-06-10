@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resources :skills, except: [:show]
     resources :users
     resources :positions
+    resources :teams
   end
 end
