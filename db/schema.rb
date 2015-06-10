@@ -50,17 +50,15 @@ ActiveRecord::Schema.define(version: 20150609074734) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "userskills", force: :cascade do |t|
-    t.integer  "level",      limit: 4
-    t.integer  "year",       limit: 4
-    t.integer  "user_id",    limit: 4
-    t.integer  "skill_id",   limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "level"
+    t.integer  "year"
+    t.integer  "user_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "userskills", ["skill_id"], name: "index_userskills_on_skill_id", using: :btree
-  add_index "userskills", ["user_id"], name: "index_userskills_on_user_id", using: :btree
+  add_index "userskills", ["skill_id"], name: "index_userskills_on_skill_id"
+  add_index "userskills", ["user_id"], name: "index_userskills_on_user_id"
 
-  add_foreign_key "userskills", "skills"
-  add_foreign_key "userskills", "users"
 end

@@ -16,4 +16,32 @@ jp:
     sessions:
       user:
         signed_in: "正常にログイン!"
-        
+
+  create: "クリエート"
+  search: "検索"
+  submit: "提出する"
+
+  skill:
+    title: "スキル"
+    create_skill: "スキルを作る"
+    all: "全部スキル"
+    create:
+      success: "正常にスキルを作る!"
+      danger: "エラー"
+    destroy:
+      success: "スキルを削除した"
+    update:
+      success: "正常にスキルをアップデートした!"
+      danger: "エラー"
+  userskill:
+    add: "ユーザーにスキル加える"
+  user:
+    id: "ユーザーID:"
+    name: "名前:"
+    email: "メール:"
+    skill: "スキル:"
+    add_skill: "スキルを加える"
+
+  signin_admin_danger: "管理者アカウントでサインインしてお願い済ます!"
+  login_danger: "サインインしてお願いします!"
+  confirm: "いいですか?"

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  scope :normal, ->{where role: Settings.user.role.normal}
+
   validates :name, presence: true, uniqueness: true, length: {maximum: Settings.user.name.maximum}
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum}
 

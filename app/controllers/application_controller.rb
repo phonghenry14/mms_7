@@ -19,6 +19,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:name, :email, :birthday, :password, :password_confirmation, :language)}
   end
 
+  def admin_user
+    unless current_user.is_admin?
+      flash[:danger] = t('signin_danger')
+      redirect_to root_path
+    end
+  end
+
   private
   def set_user_language
     I18n.locale = current_user.language if user_signed_in?
