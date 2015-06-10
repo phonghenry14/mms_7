@@ -1,0 +1,14 @@
+<% provide :title, t("position.all") %>
+<%= link_to t("create"), new_admin_position_path, class: "btn btn-large btn-primary" %>
+<%= render "search_form" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t("position.name") %></th>
+      <th><%= t("position.abb") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "position", collection: @positions %>
+  </tbody>
+</table>

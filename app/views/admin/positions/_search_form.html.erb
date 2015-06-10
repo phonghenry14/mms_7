@@ -1,0 +1,7 @@
+<%= search_form_for [:admin, @search], method: :get do |f| %>
+  <div class="my-search-field">
+    <%= f.label :name_cont, t("search") %>
+    <%= f.text_field :name_cont %>
+    <%= f.submit t("search") %>
+  </div>
+<% end %>

@@ -33,6 +33,7 @@ en:
       danger: "Error"
     destroy:
       success: "Skill Deleted"
+      confirm: "Are you sure?"
     update:
       success: "Successfully update skill!"
       danger: "Error"
@@ -60,3 +61,9 @@ en:
     create:
       success: "Successfully create position!"
       danger: "Error"
+    all: "All Position"
+    destroy:
+      success: "Skill Deleted"
+      confirm: "Are you sure?"
+    name: "Name"
+    abb: "Abbreviation"
