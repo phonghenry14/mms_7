@@ -42,8 +42,13 @@ jp:
     email: "メール:"
     skill: "スキル:"
     add_skill: "スキルを加える"
+    edit: "エディット"
 
   signin_admin_danger: "管理者アカウントでサインインしてお願い済ます!"
   login_danger: "サインインしてお願いします!"
   confirm: "いいですか?"
   back: "戻る"
+  admin:
+    edit:
+      success: "正常にアップデートした"
+      error: "アップデートを失敗した"

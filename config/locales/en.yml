@@ -44,8 +44,13 @@ en:
     email: "Email:"
     skill: "Skill:"
     add_skill: "Add skill"
+    edit: "User Edit"
 
   signin_admin_danger: "Please login as ADMIN!"
   login_danger: "Please login!"
   confirm: "Are you sure?"
   back: "Back"
+  admin:
+    edit:
+      success: "Update Successfully"
+      error: "Update Error"
