@@ -54,3 +54,9 @@ en:
     edit:
       success: "Update Successfully"
       error: "Update Error"
+
+  position:
+    create_position: "Create new position"
+    create:
+      success: "Successfully create position!"
+      danger: "Error"

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609074734) do
+ActiveRecord::Schema.define(version: 20150610062053) do
+
+  create_table "positions", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "abbreviation", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "skills", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -50,15 +57,17 @@ ActiveRecord::Schema.define(version: 20150609074734) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "userskills", force: :cascade do |t|
-    t.integer  "level"
-    t.integer  "year"
-    t.integer  "user_id"
-    t.integer  "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "level",      limit: 4
+    t.integer  "year",       limit: 4
+    t.integer  "user_id",    limit: 4
+    t.integer  "skill_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
-  add_index "userskills", ["skill_id"], name: "index_userskills_on_skill_id"
-  add_index "userskills", ["user_id"], name: "index_userskills_on_user_id"
+  add_index "userskills", ["skill_id"], name: "index_userskills_on_skill_id", using: :btree
+  add_index "userskills", ["user_id"], name: "index_userskills_on_user_id", using: :btree
 
+  add_foreign_key "userskills", "skills"
+  add_foreign_key "userskills", "users"
 end

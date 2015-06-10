@@ -6,6 +6,7 @@ class Ability
     if user.is_admin?
       can :manage, User
       can :manage, Skill
+      can :manage, Position
     else
       can :read, User
       can :update, User, id: user.id
