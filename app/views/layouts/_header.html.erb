@@ -5,6 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <% if current_user.is_admin? %>
+            <li><%= link_to t('layouts.home.list_team'), admin_teams_path %></li> 
             <li><%= link_to t('layouts.home.list_user'), admin_users_path %></li>            
             <li><%= link_to t('layouts.home.title'), root_path %></li>
             <li><%= link_to t('layouts.help'), help_path %></li>

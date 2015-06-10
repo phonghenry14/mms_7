@@ -11,6 +11,7 @@ en:
     home:
       title: "Home"
       list_user: "List User"
+      list_team: "List Team"
       welcome: "Welcome to the Member Management System"
       info: "This is the home page for the test application."
   devise:

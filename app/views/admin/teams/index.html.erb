@@ -1,0 +1,22 @@
+<h1>All team in My company</h1> 
+<%= will_paginate %>
+<%= link_to "Add", new_admin_team_path, class: "glyphicon glyphicon-plus" %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Created at</th>
+        <th>Description</th>
+        <th>Setting</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @teams %>
+    </tbody>
+  </table>
+</div>
+<%= will_paginate %>
+
+<%= link_to "Back", root_path, class: "glyphicon glyphicon-step-backward" %>
+
