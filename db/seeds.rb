@@ -1,8 +1,7 @@
-require 'factory_girl_rails'
-Dir[Rails.root.join("db/factories/*.rb")].each {|f| require f}
-
-FactoryGirl.create :user
-FactoryGirl.create :user, name: "minh"
+FactoryGirl.create :user, role: Settings.user.role.admin
+FactoryGirl.create :user, name: "minh", role: Settings.user.role.admin
+FactoryGirl.create :user, name: "phong2"
+FactoryGirl.create :user, name: "minh2"
 5.times do
   FactoryGirl.create :skill
 end

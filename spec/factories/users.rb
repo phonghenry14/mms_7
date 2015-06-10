@@ -7,5 +7,6 @@ FactoryGirl.define do
     birthday {Faker::Date.backward(140)}
     password "12345678"
     password_confirmation "12345678"
+    role Settings.user.role.normal
   end
 end
