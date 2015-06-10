@@ -6,3 +6,6 @@ user:
   role:
     admin: "admin"
     normal: "normal"
+language: 
+  english: "English"
+  japan: "Japan"

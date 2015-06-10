@@ -10,6 +10,21 @@ class Admin::UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
+  def edit
+    @user = User.find params[:id]
+  end
+
+  def update
+    @user = User.find params[:id]
+    if @user.update_attributes user_params
+      flash[:success] = t("admin.edit.success")
+      redirect_to admin_user_path(@user)
+    else
+      flash[:danger] = t("admin.edit.error")
+      redirect_to admin_user_path(@user)
+    end
+  end
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = t('skill.destroy.success')
