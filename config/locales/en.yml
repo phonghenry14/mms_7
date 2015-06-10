@@ -22,6 +22,7 @@ en:
   search: "Search"
   submit: "Submit"
   update: "Update"
+  signup: "Create User"
 
   skill:
     title: "Skill"
@@ -55,6 +56,9 @@ en:
     edit:
       success: "Update Successfully"
       error: "Update Error"
+    create:
+      success: "Create Successfully"
+      danger: "Create Error"
 
   position:
     create_position: "Create new position"

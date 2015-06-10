@@ -10,6 +10,21 @@ class Admin::UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_params
+    if @user.save 
+      flash[:success] = t("admin.create.success")
+      redirect_to admin_users_path
+    else
+      flash[:danger] = t("admin.create.danger")
+      render :new
+    end
+  end
+
   def edit
     @user = User.find params[:id]
   end

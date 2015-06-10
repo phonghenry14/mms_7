@@ -21,6 +21,8 @@ jp:
   create: "クリエート"
   search: "検索"
   submit: "提出する"
+  update: "アップデート"
+  signup: "ユーザーを作りたい"
 
   skill:
     title: "スキル"
@@ -52,3 +54,12 @@ jp:
     edit:
       success: "正常にアップデートした"
       error: "アップデートを失敗した"
+    create:
+      success: "正常に作りました"
+      danger: "作りを失敗した"
+
+  position:
+    create_position: "新しいポジションを作ります!"
+    create:
+      success: "正常にポジションを作りました!"
+      danger: "失敗した"
