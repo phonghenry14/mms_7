@@ -27,7 +27,7 @@ class Admin::SkillsController < ApplicationController
     @skill = Skill.find params[:id]
     if @skill.update_attributes skill_params
       flash[:success] = t('skill.update.success')
-      redirect_to admin_skill_path @skill
+      redirect_to admin_skills_path
     else
       flash[:danger] = t('skill.update.danger')
       render :edit

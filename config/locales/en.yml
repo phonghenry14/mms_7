@@ -20,11 +20,13 @@ en:
   create: "Create"
   search: "Search"
   submit: "Submit"
+  update: "Update"
 
   skill:
     title: "Skill"
     create_skill: "Create new skill"
     all: "All Skill"
+    update_skill: "Update skill"
     create:
       success: "Successfully create skill!"
       danger: "Error"

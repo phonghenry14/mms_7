@@ -5,3 +5,4 @@ user:
     maximum: 50
   role:
     admin: "admin"
+    normal: "normal"
