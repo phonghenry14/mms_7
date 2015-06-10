@@ -10,6 +10,7 @@ jp:
     logout: "ログアウト"
     home:
       title: "ホームページ"
+      list_user: "リスト ユーザー"      
       welcome: "会員管理システムへようこそ"
       info: "これはアプリケーションをテストするホームページです"
   devise:
@@ -45,3 +46,4 @@ jp:
   signin_admin_danger: "管理者アカウントでサインインしてお願い済ます!"
   login_danger: "サインインしてお願いします!"
   confirm: "いいですか?"
+  back: "戻る"

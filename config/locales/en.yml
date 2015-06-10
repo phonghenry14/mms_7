@@ -10,6 +10,7 @@ en:
     logout: "Logout"
     home:
       title: "Home"
+      list_user: "List User"
       welcome: "Welcome to the Member Management System"
       info: "This is the home page for the test application."
   devise:
@@ -47,3 +48,4 @@ en:
   signin_admin_danger: "Please login as ADMIN!"
   login_danger: "Please login!"
   confirm: "Are you sure?"
+  back: "Back"
