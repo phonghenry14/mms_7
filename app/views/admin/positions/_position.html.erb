@@ -1,0 +1,11 @@
+<tr>
+  <td><%= position.name %></td>
+  <td><%= position.abbreviation %></td>
+  <td>
+    <%= link_to "", edit_admin_position_path(position),
+      class: "glyphicon glyphicon-edit" %>
+    <%= link_to "", admin_position_path(position), method: :delete,
+      data: {confirm: t("position.destroy.confirm")},
+      class: "glyphicon glyphicon-trash" %>
+  </td>
+</tr>

@@ -1,4 +1,9 @@
 class Admin::PositionsController < ApplicationController
+  def index
+    @search = Position.search params[:q]
+    @positions = @search.result
+  end
+
   def new
     @position = Position.new
   end
