@@ -1,4 +1,4 @@
-<%= form_for([:admin, @user]) do |f| %>
+<%= form_for [:admin, @user] do |f| %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -10,10 +10,16 @@
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </p>      
+  </p>
   <p>
     <%= f.label :language %><br />
-    <%= f.select :language ,[Settings.language.english,Settings.language.japan] %>
+    <%= f.select :language, Settings.languages %>
+  </p>
+  <p>
+    <%= f.fields_for :user_positions do |p| %>
+      <%= p.label :position_id, t("position.title") %>
+      <%= p.collection_select :position_id, Position.all, :id, :name %>
+    <% end %>
   </p>
   <p><%= f.submit t("user.edit"), class: "btn btn-primary" %></p>
 <% end %>

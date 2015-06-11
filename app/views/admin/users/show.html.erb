@@ -3,18 +3,22 @@
   <aside class="col-md-4" >
     <section class="user_info" >
       <h1>
-        <ul><%= t('user.id') %> <%= @user.id %></ul>
-        <ul><%= t('user.name') %> <%= @user.name %></ul>
-        <ul><%= t('user.email') %> <%= @user.email %></ul>
-        <ul><%= t('user.skill') %>
+        <ul><%= t "user.id" %> <%= @user.id %></ul>
+        <ul><%= t "user.name" %> <%= @user.name %></ul>
+        <ul><%= t "user.email" %> <%= @user.email %></ul>
+        <ul><%= t "user.skill" %>
           <% @user.skills.each do |skill| %>
             <li> <%= skill.name %></li>
+          <% end %>
+        </ul>
+        <ul><%= t "user.position" %>
+          <% @user.positions.each do |position| %>
+            <%= position.name %>
           <% end %>
         </ul>
       </h1>
     </section>
   </aside>
 </div>
-<%= link_to t("user.edit"), edit_admin_user_path(@user) %><br />
+<%= link_to t("user.edit"), edit_admin_user_path(@user), class:"btn btn-success btn-sm" %><br />
 <%= link_to t("back"), admin_users_path, class: "glyphicon glyphicon-step-backward" %>
-

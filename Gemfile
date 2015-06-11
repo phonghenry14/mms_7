@@ -16,7 +16,7 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "ransack"
 gem "factory_girl_rails"
 gem "faker"
-# Use jquery as the JavaScript library
+gem "jquery-turbolinks"
 gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder", "~> 2.0"

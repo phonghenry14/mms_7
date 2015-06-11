@@ -35,7 +35,14 @@
     <%= f.select :language , Settings.languages %>
   </div>
 
+  <div class="field">
+    <%= f.fields_for :user_positions do |p| %>
+      <%= p.label :position_id, "Position" %>
+      <%= p.collection_select :position_id, Position.all, :id, :name %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit t("signup") %>
   </div>
-<% end %> 
+<% end %>

@@ -19,8 +19,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "static_pages#home"
-    resources :skills, except: [:show]
-    resources :users
+    resources :skills, except: :show
+    resources :users do
+      resource :positions
+    end
     resources :positions
     resources :teams
   end

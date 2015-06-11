@@ -1,10 +1,8 @@
 <% provide :title, t("user.edit") %>
-<h1>Edit course</h1>
-
+<h1><%= t "user.edit" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= render "form" %>
   </div>
 </div>
-
-<%= link_to "Back", :back, class: "glyphicon glyphicon-step-backward" %>
+<%= link_to t("back"), :back, class: "glyphicon glyphicon-step-backward" %>

@@ -11,8 +11,11 @@ class User < ActiveRecord::Base
 
   has_many :userskills
   has_many :skills, through: :userskills
+  has_many :user_positions
+  has_many :positions, through: :user_positions
 
   accepts_nested_attributes_for :userskills, allow_destroy: true
+  accepts_nested_attributes_for :user_positions, allow_destroy: true
 
   def is_admin?
     role == Settings.user.role.admin

@@ -46,6 +46,7 @@ en:
     name: "Name:"
     email: "Email:"
     skill: "Skill:"
+    position: "Position:"
     add_skill: "Add skill"
     edit: "User Edit"
 
@@ -59,16 +60,18 @@ en:
       error: "Update Error"
     create:
       success: "Create Successfully"
-      danger: "Create Error"   
+      danger: "Create Error"
     destroy:
-      success: "Delete Successfully" 
+      success: "Delete Successfully"
 
   position:
+    title: "Position"
     create_position: "Create new position"
     create:
       success: "Successfully create position!"
       danger: "Error"
     all: "All Position"
+    change: "Change Position"
     destroy:
       success: "Position Deleted"
       confirm: "Are you sure?"
