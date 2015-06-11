@@ -59,7 +59,9 @@ en:
       error: "Update Error"
     create:
       success: "Create Successfully"
-      danger: "Create Error"
+      danger: "Create Error"   
+    destroy:
+      success: "Delete Successfully" 
 
   position:
     create_position: "Create new position"
@@ -80,3 +82,5 @@ en:
   description: "Description"
   welcome_to: "Welcome to"
   team: "Team"
+  edit:
+    team: "Edit Team"

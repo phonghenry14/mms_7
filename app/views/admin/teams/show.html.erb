@@ -16,4 +16,5 @@
     </aside>
   </div>
 </div>
-<%= link_to t("back"), root_path, class: "glyphicon glyphicon-step-backward" %>
+<%= link_to t("edit.team"), edit_admin_team_path(@team) %><br/>
+<%= link_to t("back"), admin_teams_path, class: "glyphicon glyphicon-step-backward" %>
