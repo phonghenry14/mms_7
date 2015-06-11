@@ -10,6 +10,21 @@ class Admin::TeamsController < ApplicationController
     @team = Team.find params[:id]
   end
 
+  def new
+    @team = Team.new
+  end
+
+  def create
+    @team = Team.new team_params
+    if @team.save
+      flash[:success] = t("admin.create.success")
+      redirect_to admin_teams_path
+    else
+      flash[:danger] = t("admin.create.danger")
+      render :new
+    end
+  end
+
   def update
     @team = Team.find params[:id]
     if @team.update_attributes team_params
@@ -33,6 +48,6 @@ class Admin::TeamsController < ApplicationController
 
   private
   def team_params 
-    params.require(:team).permit :id, :name, :desciption
+    params.require(:team).permit :name, :description, :leader
   end
 end
