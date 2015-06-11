@@ -58,6 +58,8 @@ jp:
     create:
       success: "正常に作りました"
       danger: "作りを失敗した"
+    destroy:
+      success: "正常に削除した" 
 
   position:
     create_position: "新しいポジションを作ります!"
@@ -68,3 +70,5 @@ jp:
   description: "記述"
   welcome_to: "ウエルカム トウ"
   team: "チーム"
+  edit: 
+    team: "エディット チーム"

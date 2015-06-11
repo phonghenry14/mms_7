@@ -42,7 +42,7 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = t('skill.destroy.success')
+    flash[:success] = t('admin.destroy.success')
     redirect_to admin_users_path
   end
 

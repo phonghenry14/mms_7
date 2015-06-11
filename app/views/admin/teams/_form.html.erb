@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for([:admin, @team]) do |f| %>
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+      
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_field :description %>
+      </p>
+
+      <p><%= f.submit t("edit.team"), class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
+</div>
