@@ -64,3 +64,7 @@ jp:
     create:
       success: "正常にポジションを作りました!"
       danger: "失敗した"
+
+  description: "記述"
+  welcome_to: "ウエルカム トウ"
+  team: "チーム"

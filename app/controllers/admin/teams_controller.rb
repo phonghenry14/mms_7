@@ -6,6 +6,10 @@ class Admin::TeamsController < ApplicationController
     @teams = Team.paginate page: params[:page]
   end
 
+  def show
+    @team = Team.find params[:id]
+  end
+
   private
   def team_params 
     params.require(:team).permit :id, :name, :desciption

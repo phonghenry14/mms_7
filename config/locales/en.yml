@@ -76,3 +76,7 @@ en:
     update:
       success: "Successfully update position!"
       danger: "Error"
+
+  description: "Description"
+  welcome_to: "Welcome to"
+  team: "Team"
