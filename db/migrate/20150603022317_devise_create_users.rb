@@ -7,6 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :birthday,         null: false
       t.string :encrypted_password, null: false, default: ""
       t.string :role,               null: false, default: "normal"
+      t.integer :team_id
 
       # Recoverable
       t.string   :reset_password_token

@@ -9,8 +9,24 @@
     <aside class="col-md-6 col-md-offset-3">
       <section class="team_info">
         <h2>
-          <%= t("description") %>:
+          <%= t "description" %>:
           <%= @team.description %><br/>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><%= t "user.name" %></th>
+                <th><%= t "user.birthday" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @team.users.each do |user| %>
+                <tr>
+                  <td><%= user.name %></td>
+                  <td><%= user.birthday %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </h2>
       </section>
     </aside>
