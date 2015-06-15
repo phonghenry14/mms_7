@@ -51,6 +51,7 @@ en:
     edit: "User Edit"
 
   signin_admin_danger: "Please login as ADMIN!"
+  signin_leader_danger: "You're not Leader this Team"
   login_danger: "Please login!"
   confirm: "Are you sure?"
   back: "Back"
@@ -95,4 +96,7 @@ en:
   user_this_team: "List of this team's users"
   teams_company_banner: "All teams in my company"
   welcome_banner: "Welcome to %{name} Team"
-
+  project:
+    name: "Project Name"
+    abb: "Project Abbreviation"
+    add: "Add Project"

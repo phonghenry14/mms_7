@@ -26,6 +26,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def leader_team
+    unless current_user.id == @team.leader_id
+      flash[:danger] = t "signin_leader_danger"
+      redirect_to teams_path
+    end
+  end
+
   private
   def set_user_language
     I18n.locale = current_user.language if user_signed_in?

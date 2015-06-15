@@ -48,6 +48,6 @@ class Admin::TeamsController < ApplicationController
 
   private
   def team_params
-    params.require(:team).permit :name, :description, :leader, user_ids: []
+    params.require(:team).permit :name, :description, :leader_id, user_ids: []
   end
 end

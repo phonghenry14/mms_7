@@ -24,6 +24,6 @@
   </div>
 </div>
 <% if !current_user.nil? && current_user.id == @team.leader_id %>
-  <%= link_to t(:edit.team), edit_team_path(@team) %><br/>
+  <%= link_to t("edit.team"), edit_team_path(@team) %><br/>
 <% end %>
 <%= link_to t(:back), teams_path, class: "glyphicon glyphicon-step-backward" %>

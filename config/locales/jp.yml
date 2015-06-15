@@ -48,6 +48,7 @@ jp:
     edit: "エディット"
 
   signin_admin_danger: "管理者アカウントでサインインしてお願い済ます!"
+  signin_leader_danger: "リーダーチームワークじゃない!"
   login_danger: "サインインしてお願いします!"
   confirm: "いいですか?"
   back: "戻る"
@@ -80,3 +81,7 @@ jp:
   user_this_team: "このチームにいるユーザー"
   teams_company_banner: "当社に全てチーム"
   welcome_banner: " %{name} チームにお歓迎させてください"
+  project:
+    name: "プロジェクト名"
+    abb: "略語プロジェクト"
+    add: "プロジェクトを追加して"
