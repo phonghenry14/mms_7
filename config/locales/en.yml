@@ -43,7 +43,7 @@ en:
     add: "Add skill to user"
   user:
     id: "User_id:"
-    name: "Name:"
+    name: "Name"
     email: "Email:"
     skill: "Skill:"
     position: "Position:"
@@ -83,7 +83,10 @@ en:
       danger: "Error"
 
   description: "Description"
+  setting: "Setting"
+  create_at: "Create at"
   welcome_to: "Welcome to"
+  member_value: "Member Value"
   team: "Team"
   edit:
     team: "Edit Team"

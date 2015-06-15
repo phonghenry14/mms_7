@@ -68,6 +68,9 @@ jp:
       danger: "失敗した"
 
   description: "記述"
+  setting: "設定"
+  create_at: "作成時"
+  member_value: "チーム員番号"
   welcome_to: "ウエルカム トウ"
   team: "チーム"
   edit: 
