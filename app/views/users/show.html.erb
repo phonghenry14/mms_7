@@ -13,7 +13,7 @@
         <% @user.skills.each do |skill| %>
           <li><%= skill.name %></li>
         <% end %>
-        <%= link_to "Add skill", user_assign_path(@user), class:'btn btn-success btn-sm' %>
+        <%= link_to "skill.add", user_add_skills_path(@user), class:"btn btn-success btn-sm" %>
       </h1>
     </section>
   </aside>
