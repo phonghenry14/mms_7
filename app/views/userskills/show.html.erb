@@ -1,6 +1,11 @@
 <% provide :title, t("userskill.add") %>
 <h1><%= t "userskill.add" %></h1>
 <aside class= "col-md-6">
+  <div class= "list-skill">
+    <%= render "skill" %>
+  </div>
+</aside>
+<aside class= "col-md-6">
   <%= form_for @user do |f| %>
     <%= render "shared/error_messages", object: f.object %>
     <div class="row">

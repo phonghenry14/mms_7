@@ -6,7 +6,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     if @user.update_attributes params_user
-      redirect_to user_path(@user)
+      respond_to do |format|
+        format.html {redirect_to user_add_skills_path(@user)}
+        format.js
+      end
     end
   end
 

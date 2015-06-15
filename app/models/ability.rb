@@ -12,7 +12,7 @@ class Ability
     else
       can :read, User
       can :update, User, id: user.id
-      can :create, Userskill
+      can :read, Userskill
     end
   end
 end

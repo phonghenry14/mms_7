@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :userskills
-    get "assign" => "userskills#new"
+    resource :userskills
+    get "add_skills" => "userskills#show"
   end
 
   namespace :admin do

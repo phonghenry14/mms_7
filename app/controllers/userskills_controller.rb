@@ -1,7 +1,7 @@
 class UserskillsController < ApplicationController
-  def new
+  def show
     @user = User.find params[:user_id]
-    @userskill = @user.userskills.new
+    @user.userskills.build
     @skills = Skill.all
   end
 end
