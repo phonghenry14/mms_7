@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get "about"   => "static_pages#about"
   get "contact" => "static_pages#contact"
 
-  devise_for :users
-
+  devise_for :users, skip: :registrations
+  resources :teams, except: [:new, :create]
   devise_scope :user do
     get "sign_out", to: "devise/sessions#destroy"
     get "sign_in", to: "devise/sessions#new"

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   scope :normal, ->{where role: Settings.user.role.normal}
+  scope :no_team, ->{where team_id: nil}
 
   validates :name, presence: true, uniqueness: true, length: {maximum: Settings.user.name.maximum}
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum}
@@ -20,5 +21,4 @@ class User < ActiveRecord::Base
   def is_admin?
     role == Settings.user.role.admin
   end
-
 end
