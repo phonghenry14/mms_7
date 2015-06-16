@@ -11,6 +11,14 @@
         <%= f.text_field :description %>
       </p>
 
+      <div class="row">
+        <h3><%= t "user_no_team" %></h3>
+        <%= render "user_list", f: f, source: @no_team_users %>     
+      </div>
+      <div class="row">
+        <h3><%= t "this_team_users" %></h3>
+        <%= render "user_list", f: f, source: @this_team_users %>     
+      </div>
       <p><%= f.submit t("edit.team"), class: "btn btn-primary" %></p>
     <% end %>
   </div>
