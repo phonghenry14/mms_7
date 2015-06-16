@@ -1,0 +1,29 @@
+<% provide :title, @team.name %>
+<div class="container">
+  <h1><%= t :welcome_banner, name: @team.name %></h1>
+  <div class="row">
+    <aside class="col-md-6 col-md-offset-3">
+      <section class="team_info">
+        <h2>
+          <%= t :description %>:
+          <%= @team.description %><br/>
+        </h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t "user.name" %></th>
+              <th><%= t "user.birthday" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @team.users %>                
+          </tbody>        
+        </table>        
+      </section>
+    </aside>
+  </div>
+</div>
+<% if !current_user.nil? && current_user.id == @team.leader_id %>
+  <%= link_to t(:edit.team), edit_team_path(@team) %><br/>
+<% end %>
+<%= link_to t(:back), teams_path, class: "glyphicon glyphicon-step-backward" %>

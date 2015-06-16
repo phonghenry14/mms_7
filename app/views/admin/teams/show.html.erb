@@ -1,10 +1,6 @@
 <% provide :title, @team.name %>
 <div class="container">
-  <h1>
-    <%= t("welcome_to")%>
-    <%= @team.name %> 
-    <%= t("team")%>
-  </h1>           
+  <h1><%= t :welcome_banner, name: @team.name %></h1>
   <div class="row">
     <aside class="col-md-6 col-md-offset-3">
       <section class="team_info">
