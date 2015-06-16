@@ -9,3 +9,5 @@ user:
 languages: 
   - "English"
   - "Japan"
+page:
+  per_max: 5

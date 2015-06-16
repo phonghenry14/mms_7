@@ -1,6 +1,5 @@
 <h1><%= t "teams_company_banner" %></h1> 
 <%= will_paginate %>
-<%= link_to "Add", new_admin_team_path, class: "glyphicon glyphicon-plus" %>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -9,7 +8,6 @@
         <th><%= t "member_value" %></th>
         <th><%= t "create_at" %></th>
         <th><%= t "description" %></th>
-        <th><%= t "setting" %></th>
       </tr>
     </thead>
     <tbody>
@@ -18,5 +16,5 @@
   </table>
 </div>
 <%= will_paginate %>
-<%= link_to "Back", root_path, class: "glyphicon glyphicon-step-backward" %>
+<%= link_to t("back"), root_path, class: "glyphicon glyphicon-step-backward" %>
 
