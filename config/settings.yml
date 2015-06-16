@@ -10,4 +10,4 @@ languages:
   - "English"
   - "Japan"
 page:
-  per_max: 5
+  max_page: 5
