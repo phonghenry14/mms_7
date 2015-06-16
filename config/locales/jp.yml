@@ -75,3 +75,6 @@ jp:
   team: "チーム"
   edit: 
     team: "エディット チーム"
+
+  user_no_team: "チームかにいないユーザー"
+  user_this_team: "このチームにいるユーザー"

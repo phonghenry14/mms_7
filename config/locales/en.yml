@@ -90,3 +90,6 @@ en:
   team: "Team"
   edit:
     team: "Edit Team"
+
+  user_no_team: "List user no team"
+  user_this_team: "List user this team"
