@@ -13,6 +13,7 @@ class Ability
       can :read, User
       can :update, User, id: user.id
       can :read, Userskill
+      can :read, Team
     end
   end
 end
