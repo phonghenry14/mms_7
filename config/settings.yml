@@ -6,8 +6,12 @@ user:
   role:
     admin: "admin"
     normal: "normal"
-languages: 
+languages:
   - "English"
   - "Japan"
 page:
   max_page: 5
+activities:
+  create: "admin_create"
+  update: "admin_update"
+  destroy: "admin_destroy"

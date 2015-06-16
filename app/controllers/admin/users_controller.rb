@@ -1,9 +1,8 @@
 class Admin::UsersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :admin_user
+  before_action :authenticate_user!, :admin_user
 
   def index
-    @users = User.normal.paginate page: params[:page]
+    @users = User.normal.paginate page: params[:page], per_page: Settings.page.max_page
   end
 
   def show
