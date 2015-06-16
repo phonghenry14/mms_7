@@ -1,4 +1,6 @@
 class Admin::SkillsController < ApplicationController
+  before_action :authenticate_user!, :admin_user
+
   def index
     @search = Skill.search params[:q]
     @skills = @search.result

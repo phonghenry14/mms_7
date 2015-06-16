@@ -1,4 +1,6 @@
 class Admin::PositionsController < ApplicationController
+  before_action :authenticate_user!, :admin_user
+
   def index
     @search = Position.search params[:q]
     @positions = @search.result

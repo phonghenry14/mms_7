@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  include ActivityLogs
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -18,7 +18,24 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :userskills, allow_destroy: true
   accepts_nested_attributes_for :user_positions, allow_destroy: true
 
+  after_create :log_create
+  after_update :log_update
+  after_destroy :log_destroy
+
   def is_admin?
     role == Settings.user.role.admin
+  end
+
+  private
+  def log_create
+    create_activity_log Settings.activities.create, self.class.name
+  end
+
+  def log_update
+    create_activity_log Settings.activities.update, self.class.name
+  end
+
+  def log_destroy
+    create_activity_log Settings.activities.destroy, self.class.name
   end
 end

@@ -1,6 +1,5 @@
 class Admin::TeamsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :admin_user
+  before_action :authenticate_user!, :admin_user
 
   def index
     @teams = Team.paginate page: params[:page]
@@ -32,14 +31,13 @@ class Admin::TeamsController < ApplicationController
   end
 
   def update
-    @team = Team.find params[:id]    
+    @team = Team.find params[:id]
     if @team.update_attributes team_params
       flash[:success] = t "admin.edit.success"
-      redirect_to admin_team_path @team 
     else
       flash[:danger] = t "admin.edit.danger"
-      redirect_to admin_team_path @team
     end
+    redirect_to admin_team_path @team
   end
 
   def destroy
@@ -49,7 +47,7 @@ class Admin::TeamsController < ApplicationController
   end
 
   private
-  def team_params 
-    params.require(:team).permit :name, :description, :leader_id, user_ids:[]
+  def team_params
+    params.require(:team).permit :name, :description, :leader, user_ids: []
   end
 end
