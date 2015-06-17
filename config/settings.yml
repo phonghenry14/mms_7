@@ -15,3 +15,4 @@ activities:
   create: "admin_create"
   update: "admin_update"
   destroy: "admin_destroy"
+  days_of_week: 7
