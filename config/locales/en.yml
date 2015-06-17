@@ -29,6 +29,8 @@ en:
     title: "Skill"
     create_skill: "Create new skill"
     all: "All Skill"
+    level: "level"
+    year: "years"
     update_skill: "Update skill"
     create:
       success: "Successfully create skill!"
