@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2><%= t :name %>: <%= @team.name %></h2>
+    <h2><%= t "description" %>: <%= @team.description %></h2>
+  </div>
+</div>
+<div class="row">
+  <%= nested_form_for @team do |f| %>
+    <table>
+      <thead>
+        <tr>
+          <th><%= t "project.name" %></th>
+          <th><%= t "project.abb" %></th>
+          <th><%= t "setting" %></th>
+        </tr>
+      </thead>
+      <%= f.fields_for :projects do |project_form| %>
+        <tbody>
+          <td><%= project_form.text_field :name %></td>
+          <td><%= project_form.text_field :abb %></td>
+          <td><%= project_form.link_to_remove "", class: "glyphicon glyphicon-trash" %></td>
+        </tbody>
+      <% end %>
+    </table>
+    <p><%= f.link_to_add t("project.add"), :projects %></p>
+    <p><%= f.submit t("edit.team"), class: "btn btn-primary" %></p>  
+  <% end %>
+</div>

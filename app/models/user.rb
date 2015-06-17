@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :user_positions, dependent: :destroy
   has_many :positions, through: :user_positions
 
+  belongs_to :team
+
   accepts_nested_attributes_for :userskills, allow_destroy: true
   accepts_nested_attributes_for :user_positions, allow_destroy: true
 

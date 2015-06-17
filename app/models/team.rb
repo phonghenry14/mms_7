@@ -2,7 +2,10 @@ class Team < ActiveRecord::Base
   include ActivityLogs
 
   has_many :users, dependent: :destroy
+  has_many :projects, dependent: :destroy 
+  
   accepts_nested_attributes_for :users, allow_destroy: :true
+  accepts_nested_attributes_for :projects, allow_destroy: true 
 
   after_create :log_create
   after_update :log_update
@@ -21,3 +24,4 @@ class Team < ActiveRecord::Base
     create_activity_log Settings.activities.destroy, self.class.name
   end
 end
+
