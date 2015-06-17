@@ -16,3 +16,14 @@ activities:
   update: "admin_update"
   destroy: "admin_destroy"
   days_of_week: 7
+checkbox:
+  zero: 0
+  one: 1
+skill:
+  levels:
+    - "Beginner"
+    - "Amateur"
+    - "Professional"
+    - "Top Coder"
+    - "Super star"
+    - "Legendary"

@@ -1,17 +1,23 @@
 <% provide :title, @user.name %>
 <div class="row" >
-  <aside class="col-md-4" >
+  <aside class="col-md-6" >
     <section class="user_info" >
       <h1>
-        <%= t('user.id') %>
+        <%= t "user.id" %>
         <%= @user.id %><br>
-        <%= t('user.name') %>
+        <%= t "user.name" %>
         <%= @user.name %><br>
-        <%= t('user.email') %>
+        <%= t "user.email" %>
         <%= @user.email %><br>
-        <%= t('user.skill') %>
-        <% @user.skills.each do |skill| %>
-          <li><%= skill.name %></li>
+        <%= t "user.skill" %>
+        <% @user.userskills.each do |f| %>
+          <li>
+            <%= f.skill.name %>|
+            <%= t "skill.level" %>
+            <%= f.level %>|
+            <%= t "skill.year" %>
+            <%= f.year %>
+          </li>
         <% end %>
         <%= link_to "skill.add", user_add_skills_path(@user), class:"btn btn-success btn-sm" %>
       </h1>

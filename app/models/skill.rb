@@ -1,9 +1,10 @@
 class Skill < ActiveRecord::Base
   include ActivityLogs
 
+  has_many :userskills, dependent: :destroy
+  has_many :users, through: :userskills
+
   validates :name, presence: true
-  has_many :user_skills
-  has_many :users, through: :user_skills
 
   after_create :log_create
   after_update :log_update

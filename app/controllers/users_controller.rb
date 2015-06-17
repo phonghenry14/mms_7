@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   private
   def params_user
-    params.require(:user).permit :name, :email, :birthday, :password, :password_confirmation, skill_ids:[]
+    params.require(:user).permit :name, :email, :birthday, :password, :password_confirmation, skill_ids:[],
+                                 userskills_attributes: [:id, :user_id, :skill_id, :level, :year, :_destroy]
   end
 end
