@@ -1,13 +1,13 @@
-<h1>All user in My company </h1> 
+<h1><%= t "teams_company_banner" %></h1>
 <%= will_paginate %>
-<%= link_to "Add", new_admin_user_path, class: "glyphicon glyphicon-plus" %>
+<%= link_to t("add"), new_admin_user_path, class: "glyphicon glyphicon-plus" %>
 <div class="table-responsive">
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Birthday</th>
-        <th>Setting</th>
+        <th><%= t "user.name" %></th>
+        <th><%= t "user.birthday" %></th>
+        <th><%= t "setting" %></th>
       </tr>
     </thead>
     <tbody>
@@ -17,5 +17,5 @@
 </div>
 <%= will_paginate %>
 
-<%= link_to "Back", root_path, class: "glyphicon glyphicon-step-backward" %>
+<%= link_to t("back"), root_path, class: "glyphicon glyphicon-step-backward" %>
 

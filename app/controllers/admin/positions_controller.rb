@@ -4,6 +4,10 @@ class Admin::PositionsController < ApplicationController
   def index
     @search = Position.search params[:q]
     @positions = @search.result
+    respond_to do |format|
+      format.html
+      format.csv {send_data @positions.to_csv}
+    end
   end
 
   def new

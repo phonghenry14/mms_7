@@ -31,6 +31,20 @@ class User < ActiveRecord::Base
     role == Settings.user.role.admin
   end
 
+  def to_csv
+    CSV.generate do |csv|
+      data = [self.id] + [self.name] + [self.email] + [self.team.name]
+      positions = self.positions.map(&:name)
+      skills = self.skills.map(&:name)
+      csv << ["id", "name", "email", "team"]
+      csv << data
+      csv << ["positions"]
+      csv << positions
+      csv << ["skills"]
+      csv << skills
+    end
+  end
+
   private
   def log_create
     create_activity_log Settings.activities.create, self.class.name

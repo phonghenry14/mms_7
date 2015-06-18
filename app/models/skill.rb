@@ -1,5 +1,6 @@
 class Skill < ActiveRecord::Base
   include ActivityLogs
+  extend CsvExports
 
   has_many :userskills, dependent: :destroy
   has_many :users, through: :userskills

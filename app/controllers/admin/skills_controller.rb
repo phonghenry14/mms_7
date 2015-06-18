@@ -4,6 +4,10 @@ class Admin::SkillsController < ApplicationController
   def index
     @search = Skill.search params[:q]
     @skills = @search.result
+    respond_to do |format|
+      format.html
+      format.csv {send_data @skills.to_csv}
+    end
   end
 
   def new
