@@ -1,10 +1,11 @@
-<% provide :title, t('skill.all') %>
-<%= link_to t('create'), new_admin_skill_path, class: "btn btn-large btn-primary" %>
+<% provide :title, t("skill.all") %>
+<%= link_to t("create"), new_admin_skill_path, class: "btn btn-large btn-primary" %>
 <%= render "search_form" %>
 <table class="table">
+  <%= link_to t("csv.down"), admin_skills_path(format: "csv") %>
   <thead>
     <tr>
-      <th><%= t('skill.title') %></th>
+      <th><%= t "skill.title" %></th>
     </tr>
   </thead>
   <tbody>

@@ -3,6 +3,7 @@
   <aside class="col-md-4" >
     <section class="user_info" >
       <h1>
+        <%= link_to t("csv.down"), admin_user_path(format: "csv") %>
         <ul><%= t "user.id" %> <%= @user.id %></ul>
         <ul><%= t "user.name" %> <%= @user.name %></ul>
         <ul><%= t "user.email" %> <%= @user.email %></ul>

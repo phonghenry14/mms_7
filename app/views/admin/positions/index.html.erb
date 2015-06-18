@@ -2,10 +2,11 @@
 <%= link_to t("create"), new_admin_position_path, class: "btn btn-large btn-primary" %>
 <%= render "search_form" %>
 <table class="table">
+  <%= link_to t("csv.down"), admin_positions_path(format: "csv") %>
   <thead>
     <tr>
-      <th><%= t("position.name") %></th>
-      <th><%= t("position.abb") %></th>
+      <th><%= t "position.name" %></th>
+      <th><%= t "position.abb" %></th>
     </tr>
   </thead>
   <tbody>

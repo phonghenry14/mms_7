@@ -1,5 +1,6 @@
 class Position < ActiveRecord::Base
   include ActivityLogs
+  extend CsvExports
 
   validates :name, presence: true
   validates :abbreviation, presence: true
