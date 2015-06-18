@@ -14,6 +14,7 @@ class Ability
       can :update, User, id: user.id
       can :create, Userskill
       can [:read, :update], Team
+      can [:read, :update], Project
     end
   end
 end

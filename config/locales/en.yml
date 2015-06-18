@@ -103,6 +103,7 @@ en:
     abb: "Project Abbreviation"
     add: "Add Project"
     member: "Project Member"
+    create: "Create Project"
   csv:
     down:"Down CSV"
   leader_name: "Leader Name"
@@ -112,3 +113,7 @@ en:
   import:
     title: "Import"
     success: "Imported successfully"
+  check_leader:
+    success: "Welcome leader"
+    danger: "You not leader!"
+  add: "Add"

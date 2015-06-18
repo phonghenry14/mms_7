@@ -7,11 +7,11 @@ class Admin::TeamsController < ApplicationController
 
   def show
     @team = Team.find params[:id]
+    @leader = @team.leader
     respond_to do |format|
       format.html
       format.csv {send_data @team.to_csv}
     end
-    @leader = @team.leader
   end
 
   def new

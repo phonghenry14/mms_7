@@ -18,8 +18,8 @@
             </tr>
           </thead>
           <tbody>
-            <%= render @team.users %>                
-          </tbody>        
+            <%= render @team.users %>
+          </tbody>
         </table>
         <table class="table">
           <thead>
@@ -27,18 +27,17 @@
               <th><%= t "project.name" %></th>
               <th><%= t "project.abb" %></th>
               <th><%= t "project.member" %></th>
-              <th><%= t "setting" %></th>
             </tr>
           </thead>
           <tbody>
-            <%= render "project_field" %>                
-          </tbody>        
-        </table>        
+            <%= render "project_field" %>
+          </tbody>
+        </table>
       </section>
     </aside>
   </div>
 </div>
 <% if !current_user.nil? && current_user.id == @team.leader_id %>
-  <%= link_to t("edit.team"), edit_team_path(@team) %><br/>
+  <%= link_to t("project.create"), edit_team_path(@team) %><br/>
 <% end %>
 <%= link_to t(:back), teams_path, class: "glyphicon glyphicon-step-backward" %>

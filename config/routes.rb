@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root             "static_pages#home"
   get "help"    => "static_pages#help"
   get "about"   => "static_pages#about"
@@ -6,12 +7,19 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: :registrations
   resources :teams, except: [:new, :create]
+  resources :teams do
+    resource :user_projects
+    get "add_user_project" => "user_projects#show"
+  end
+
   devise_scope :user do
     get "sign_out", to: "devise/sessions#destroy"
     get "sign_in", to: "devise/sessions#new"
     get "sign_up", to: "devise/registrations#new"
   end
 
+  resources :projects, only: [:edit, :update]
+  
   resources :users do
     resource :userskills
     get "add_skills" => "userskills#show"

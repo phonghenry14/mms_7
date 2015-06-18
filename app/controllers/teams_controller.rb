@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :leader_team, only: [:edit, :update]
   before_action :set_team, only: [:edit, :update, :show]
+  before_action :leader_team, only: [:edit, :update]
 
   def index
     @teams = Team.paginate page: params[:page], per_page: Settings.page.max_page
