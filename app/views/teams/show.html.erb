@@ -18,6 +18,19 @@
           <tbody>
             <%= render @team.users %>                
           </tbody>        
+        </table>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t "project.name" %></th>
+              <th><%= t "project.abb" %></th>
+              <th><%= t "project.member" %></th>
+              <th><%= t "setting" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render "project_field" %>                
+          </tbody>        
         </table>        
       </section>
     </aside>

@@ -4,7 +4,7 @@
   <td><%= team.created_at %></td>
   <td><%= team.description %></td>
   <td><%= link_to "", edit_admin_team_path(team), class: "glyphicon glyphicon-edit" %>
-    <%= link_to "", admin_team_path(team), method: :delete,data: {confirm: t("confirm")},
+    <%= link_to "", admin_team_path(team), method: :delete, data: {confirm: t("confirm")},
       class: "glyphicon glyphicon-trash" %>
   </td>
 </tr>
