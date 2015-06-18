@@ -15,7 +15,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to t("layouts.profile"), user_path(current_user) %></li>
-                <li><%= link_to t("layouts.setting"), root_path %></li>
+                <li><%= link_to t("layouts.setting"), edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to t("layouts.logout"), sign_out_path%>
@@ -31,7 +31,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to t("layouts.profile"), user_path(current_user) %></li>
-                <li><%= link_to t("layouts.setting"), root_path %></li>
+                <li><%= link_to t("layouts.setting"), edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to t("layouts.logout"), sign_out_path%>
