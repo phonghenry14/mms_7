@@ -105,3 +105,5 @@ en:
     member: "Project Member"
   csv:
     down:"Down CSV"
+  leader_name: "Leader Name"
+  leader: "Leader"

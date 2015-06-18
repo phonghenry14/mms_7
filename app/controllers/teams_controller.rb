@@ -7,7 +7,8 @@ class TeamsController < ApplicationController
     @teams = Team.paginate page: params[:page], per_page: Settings.page.max_page
   end
 
-  def show    
+  def show
+    @leader = @team.leader
   end
 
   def edit

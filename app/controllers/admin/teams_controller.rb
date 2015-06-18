@@ -11,10 +11,12 @@ class Admin::TeamsController < ApplicationController
       format.html
       format.csv {send_data @team.to_csv}
     end
+    @leader = @team.leader
   end
 
   def new
     @team = Team.new
+    @leader_id = User.normal.pluck(:name, :id)
   end
 
   def create
