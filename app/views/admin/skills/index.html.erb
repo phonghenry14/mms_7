@@ -2,7 +2,8 @@
 <%= link_to t("create"), new_admin_skill_path, class: "btn btn-large btn-primary" %>
 <%= render "search_form" %>
 <table class="table">
-  <%= link_to t("csv.down"), admin_skills_path(format: "csv") %>
+  <%= link_to t("export.download"), admin_skills_path(format: "csv") %>
+  <%= render "shared/import_form", model: Skill %>
   <thead>
     <tr>
       <th><%= t "skill.title" %></th>

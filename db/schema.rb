@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(version: 20150618071011) do
   add_index "user_positions", ["user_id"], name: "index_user_positions_on_user_id"
 
   create_table "user_projects", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",    limit: 4
+    t.integer  "project_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "users", force: :cascade do |t|
