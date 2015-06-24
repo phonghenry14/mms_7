@@ -107,3 +107,8 @@ en:
     down:"Down CSV"
   leader_name: "Leader Name"
   leader: "Leader"
+  export:
+    download:"Download CSV"
+  import:
+    title: "Import"
+    success: "Imported successfully"

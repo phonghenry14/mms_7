@@ -1,0 +1,9 @@
+<h3><%= t "import.title" %></h3>
+<%= form_tag admin_imports_path, method: :post, multipart: true do %>
+  <div>
+    <%= label_tag :file, "CSV:" %>
+    <%= file_field_tag :file %>
+    <%= hidden_field_tag :model, model %>
+    <%= submit_tag t("submit") %>
+  </div>
+<% end %>

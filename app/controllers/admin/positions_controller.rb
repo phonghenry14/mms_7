@@ -46,7 +46,6 @@ class Admin::PositionsController < ApplicationController
     redirect_to admin_positions_path
   end
 
-
   private
   def position_params
     params.require(:position).permit :id, :name, :abbreviation

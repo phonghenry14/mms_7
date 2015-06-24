@@ -25,5 +25,6 @@ Rails.application.routes.draw do
     end
     resources :positions
     resources :teams
+    resources :imports
   end
 end
