@@ -51,6 +51,7 @@ en:
     position: "Position:"
     add_skill: "Add skill"
     edit: "User Edit"
+    password: "Password"
 
   signin_admin_danger: "Please login as ADMIN!"
   signin_leader_danger: "You're not Leader this Team"
@@ -117,3 +118,5 @@ en:
     success: "Welcome leader"
     danger: "You not leader!"
   add: "Add"
+  mail:
+    title: "You have a account in MMS website."
