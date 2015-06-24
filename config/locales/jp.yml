@@ -86,5 +86,7 @@ jp:
     abb: "略語プロジェクト"
     add: "プロジェクトを追加して"
     member: "プロジェクトメンバー"
+    create: "プロジェクトを作る"
   leader_name: "リーダー名"
   leader: "リーダー"
+  add: "略語"

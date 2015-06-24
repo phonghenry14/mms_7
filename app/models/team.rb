@@ -3,6 +3,7 @@ class Team < ActiveRecord::Base
 
   has_many :users, dependent: :destroy
   has_many :projects, dependent: :destroy
+  belongs_to :leader, class_name: "User"
 
   accepts_nested_attributes_for :users, allow_destroy: :true
   accepts_nested_attributes_for :projects, allow_destroy: true
