@@ -1,9 +1,12 @@
 class Admin::PositionsController < ApplicationController
-  before_action :authenticate_user!, :admin_user
+  before_action :admin_user
+  before_action :set_position, only: [:edit, :update, :destroy]
 
   def index
     @search = Position.search params[:q]
     @positions = @search.result
+    @positions.paginate page: params[:page],
+                        per_page: Settings.page.max_page
     respond_to do |format|
       format.html
       format.csv {send_data @positions.to_csv}
@@ -26,11 +29,9 @@ class Admin::PositionsController < ApplicationController
   end
 
   def edit
-    @position = Position.find params[:id]
   end
 
   def update
-    @position = Position.find params[:id]
     if @position.update_attributes position_params
       flash[:success] = t "position.update.success"
       redirect_to admin_positions_path
@@ -41,7 +42,7 @@ class Admin::PositionsController < ApplicationController
   end
 
   def destroy
-    Position.find(params[:id]).destroy
+    @position.destroy
     flash[:success] = t "position.destroy.success"
     redirect_to admin_positions_path
   end
@@ -49,5 +50,9 @@ class Admin::PositionsController < ApplicationController
   private
   def position_params
     params.require(:position).permit :id, :name, :abbreviation
+  end
+
+  def set_position
+    @position = Position.find params[:id]
   end
 end

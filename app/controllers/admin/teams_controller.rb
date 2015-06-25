@@ -1,12 +1,13 @@
 class Admin::TeamsController < ApplicationController
-  before_action :authenticate_user!, :admin_user
+  before_action :admin_user
+  before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   def index
-    @teams = Team.paginate page: params[:page]
+    @teams = Team.paginate page: params[:page],
+                           per_page: Settings.page.max_page
   end
 
   def show
-    @team = Team.find params[:id]
     @leader = @team.leader
     respond_to do |format|
       format.html
@@ -31,13 +32,11 @@ class Admin::TeamsController < ApplicationController
   end
 
   def edit
-    @team = Team.find params[:id]
     @no_team_users = User.normal.no_team
     @this_team_users = @team.users
   end
 
   def update
-    @team = Team.find params[:id]
     if @team.update_attributes team_params
       flash[:success] = t "admin.edit.success"
     else
@@ -47,7 +46,7 @@ class Admin::TeamsController < ApplicationController
   end
 
   def destroy
-    Team.find(params[:id]).destroy
+    @team.destroy
     flash[:success] = t "admin.destroy.success"
     redirect_to admin_teams_path
   end
@@ -55,5 +54,9 @@ class Admin::TeamsController < ApplicationController
   private
   def team_params
     params.require(:team).permit :name, :description, :leader_id, user_ids: []
+  end
+
+  def set_team
+    @team = Team.find params[:id]
   end
 end

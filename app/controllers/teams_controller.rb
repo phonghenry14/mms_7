@@ -1,10 +1,11 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :normal_user
   before_action :set_team, only: [:edit, :update, :show]
   before_action :leader_team, only: [:edit, :update]
 
   def index
-    @teams = Team.paginate page: params[:page], per_page: Settings.page.max_page
+    @teams = Team.paginate page: params[:page],
+                           per_page: Settings.page.max_page
   end
 
   def show
@@ -17,7 +18,7 @@ class TeamsController < ApplicationController
   def update
     if @team.update_attributes team_params
       flash[:success] = t "leader.update.success"
-      redirect_to team_path(@team)
+      redirect_to team_path @team
     else
       flash[:danger] = t "leader.update.danger"
       render :edit

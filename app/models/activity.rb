@@ -1,9 +1,9 @@
 class Activity < ActiveRecord::Base
   enum action: [:admin_create, :admin_update, :admin_destroy]
 
+  scope :old_activity, ->{where("created_at < ?", Settings.activities.days_of_week.days.ago)}
+
   def self.remove_old_activity
-    Activity.all.each {|activity|
-      activity.destroy if (activity.created_at + Settings.activities.days_of_week.days) < Time.zone.now
-    }
+    Activity.old_activity.destroy_all
   end
 end

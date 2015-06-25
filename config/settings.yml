@@ -6,6 +6,7 @@ user:
   role:
     admin: "admin"
     normal: "normal"
+  password: "12345678"
 languages:
   - "English"
   - "Japan"
@@ -24,6 +25,6 @@ skill:
     - "Beginner"
     - "Amateur"
     - "Professional"
-    - "Top Coder"
-    - "Super star"
+    - "TopCoder"
+    - "SuperStar"
     - "Legendary"

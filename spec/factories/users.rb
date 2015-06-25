@@ -1,12 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    name "phong"
-    sequence :email do |n|
-      "#{name}#{n}@gmail.com"
-    end
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
     birthday {Faker::Date.backward(140)}
-    password "12345678"
-    password_confirmation "12345678"
+    password Settings.user.password
+    password_confirmation Settings.user.password
     role Settings.user.role.normal
   end
 end
