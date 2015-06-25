@@ -49,8 +49,10 @@ en:
     email: "Email:"
     skill: "Skill:"
     position: "Position:"
+    team: "Team:"
     add_skill: "Add skill"
     edit: "User Edit"
+    new: "Create User"
     password: "Password"
 
   signin_admin_danger: "Please login as ADMIN!"
@@ -105,12 +107,9 @@ en:
     add: "Add Project"
     member: "Project Member"
     create: "Create Project"
-  csv:
-    down:"Down CSV"
   leader_name: "Leader Name"
   leader: "Leader"
-  export:
-    download:"Download CSV"
+  down_csv: "Download CSV"
   import:
     title: "Import"
     success: "Imported successfully"

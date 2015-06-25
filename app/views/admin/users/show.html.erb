@@ -1,20 +1,35 @@
 <% provide :title, @user.name %>
-<div class="row" >
-  <aside class="col-md-4" >
-    <section class="user_info" >
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
       <h1>
-        <%= link_to t("csv.down"), admin_user_path(format: "csv") %>
-        <ul><%= t "user.id" %> <%= @user.id %></ul>
-        <ul><%= t "user.name" %> <%= @user.name %></ul>
-        <ul><%= t "user.email" %> <%= @user.email %></ul>
-        <ul><%= t "user.skill" %>
-          <% @user.skills.each do |skill| %>
-            <li> <%= skill.name %></li>
-          <% end %>
+        <%= link_to t("down_csv"), admin_user_path(format: "csv") %>
+        <ul>
+          <%= t "user.id" %>
+          <%= @user.id %>
         </ul>
-        <ul><%= t "user.position" %>
+        <ul>
+          <%= t "user.name" %>
+          <%= @user.name %>
+        </ul>
+        <ul>
+          <%= t "user.email" %>
+          <%= @user.email %>
+        </ul>
+        <ul>
+          <%= t "user.position" %>
           <% @user.positions.each do |position| %>
             <%= position.name %>
+          <% end %>
+        </ul>
+        <ul>
+          <%= t "user.team" %>
+          <%= @user.team.name %>
+        </ul>
+        <ul>
+          <%= t "user.skill" %>
+          <% @user.skills.each do |skill| %>
+            <li><%= skill.name %></li>
           <% end %>
         </ul>
       </h1>
