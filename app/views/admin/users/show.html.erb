@@ -46,13 +46,3 @@
 </div>
 <%= link_to t("user.edit"), edit_admin_user_path(@user), class:"btn btn-success btn-sm" %><br />
 <%= link_to t("back"), admin_users_path, class: "glyphicon glyphicon-step-backward" %>
-
-
-<% @user.userskills.each do |f| %>
-  <li>
-    <%= f.skill.name %>|
-    <%= t "skill.level" %>
-    <%= f.level %>|
-    <%= t "skill.year" %>
-    <%= f.year %>
-  </li>
