@@ -1,35 +1,32 @@
 <% provide :title, @team.name %>
 <div class="container">
   <h1><%= t :welcome_banner, name: @team.name %></h1>
+  <h2>
+    <%= t "leader_name" %>:
+    <%= @leader.name %><br/>
+    <%= t "description" %>:
+    <%= @team.description %><br/>
+  </h2>
   <div class="row">
-    <%= link_to t("csv.down"), admin_team_path(format: "csv") %>
-    <aside class="col-md-6 col-md-offset-3">
+    <aside class="col-md-6">
       <section class="team_info">
-        <h2>
-          <%= t "leader_name" %>:
-          <%= @leader.name %><br/>
-          <%= t "description" %>:
-          <%= @team.description %><br/>
-          <table class="table">
-            <thead>
-              <tr>
-                <th><%= t "user.name" %></th>
-                <th><%= t "user.birthday" %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @team.users.each do |user| %>
-                <tr>
-                  <td><%= user.name %></td>
-                  <td><%= user.birthday %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t "user.name" %></th>
+              <th><%= t "user.position" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "user", collection: @team.users %>
+          </tbody>
+        </table>
       </section>
+    </aside>
+    <aside class="col-md-6">
+      <%= link_to t("edit.team"), edit_admin_team_path(@team), class:"btn btn-success btn-sm" %><br/>
+      <%= link_to t("down_csv"), admin_team_path(format: "csv") %>
     </aside>
   </div>
 </div>
-<%= link_to t("edit.team"), edit_admin_team_path(@team) %><br/>
-<%= link_to t("back"), admin_teams_path, class: "glyphicon glyphicon-step-backward" %>
+

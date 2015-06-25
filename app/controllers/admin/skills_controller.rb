@@ -4,6 +4,7 @@ class Admin::SkillsController < ApplicationController
   def index
     @search = Skill.search params[:q]
     @skills = @search.result
+    @skills.paginate page: params[:page], per_page: Settings.page.max_page
     respond_to do |format|
       format.html
       format.csv {send_data @skills.to_csv}

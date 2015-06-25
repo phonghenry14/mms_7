@@ -1,15 +1,21 @@
 <% provide :title, t("skill.all") %>
-<%= link_to t("create"), new_admin_skill_path, class: "btn btn-large btn-primary" %>
-<%= render "search_form" %>
-<table class="table">
-  <%= link_to t("export.download"), admin_skills_path(format: "csv") %>
-  <%= render "shared/import_form", model: Skill %>
-  <thead>
-    <tr>
-      <th><%= t "skill.title" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render partial: "skill", collection: @skills %>
-  </tbody>
-</table>
+<div class="container">
+  <aside class="col-md-6">
+    <%= render "search_form" %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t "skill.title" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @skills %>
+      </tbody>
+    </table>
+  </aside>
+  <aside class="col-md-6">
+    <%= link_to t("create"), new_admin_skill_path, class: "btn btn-large btn-primary" %></br></br>
+    <%= link_to t("down_csv"), admin_skills_path(format: "csv") %>
+    <%= render "shared/import_form", model: Skill %>
+  </aside>
+</div>
