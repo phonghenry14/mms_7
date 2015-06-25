@@ -119,3 +119,4 @@ en:
   add: "Add"
   mail:
     title: "You have a account in MMS website."
+  not_normal_user: "You aren't normal user"

@@ -1,7 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
-    @teams = Team.paginate page: params[:page]
-    redirect_to teams_path
+    if user_signed_in? && current_user.is_admin?
+      redirect_to admin_teams_path
+    elsif user_signed_in?
+      redirect_to teams_path
+    end
   end
 
   def help

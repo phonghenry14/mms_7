@@ -1,9 +1,10 @@
 class Admin::ImportsController < ApplicationController
   skip_load_and_authorize_resource
+  before_action :admin_user
 
   def create
     import_csv params[:model].safe_constantize, params[:file]
-    redirect_to :back, notice: t("import.success")
+    redirect_to :back, notice: t "import.success"
   end
 
   private

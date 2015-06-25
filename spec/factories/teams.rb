@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :team do
-    name "dien cuong"
-    description "hoi cung nhung nguoi dien cuong"
-    leader_id "3"
+    name {Faker::Name.name}
+    description {Faker::Lorem.sentence}
+    leader_id {Faker::Number.digit}
   end
 end

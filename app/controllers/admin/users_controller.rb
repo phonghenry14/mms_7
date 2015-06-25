@@ -1,12 +1,13 @@
 class Admin::UsersController < ApplicationController
-  before_action :authenticate_user!, :admin_user
+  before_action :admin_user
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.normal.paginate page: params[:page], per_page: Settings.page.max_page
+    @users = User.normal.paginate page: params[:page],
+                                  per_page: Settings.page.max_page
   end
 
   def show
-    @user = User.find params[:id]
     respond_to do |format|
       format.html
       format.csv {send_data @user.to_csv}
@@ -32,13 +33,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find params[:id]
     @user_position = @user.user_positions.last
     @positions = Position.all
   end
 
   def update
-    @user = User.find params[:id]
     if @user.update_attributes user_params
       flash[:success] = t "admin.edit.success"
       redirect_to admin_user_path @user
@@ -49,7 +48,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = t "admin.destroy.success"
     redirect_to admin_users_path
   end
@@ -59,5 +58,9 @@ class Admin::UsersController < ApplicationController
     params.require(:user).permit :name, :email, :birthday,
       :password, :password_confirmation, :language,
       user_positions_attributes: [:id, :user_id, :position_id]
+  end
+
+  def set_user
+    @user = User.find params[:id]
   end
 end

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: expection.message
   end
 
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protect_from_forgery with: :exception
@@ -21,8 +22,15 @@ class ApplicationController < ActionController::Base
 
   def admin_user
     unless current_user.is_admin?
-      flash[:danger] = t("signin_admin_danger")
+      flash[:danger] = t "signin_admin_danger"
       redirect_to root_path
+    end
+  end
+
+  def normal_user
+    if current_user.is_admin?
+      flash[:danger] = t "not_normal_user"
+      redirect_to admin_teams_path
     end
   end
 
