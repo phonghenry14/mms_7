@@ -3,22 +3,42 @@
   <aside class="col-md-6" >
     <section class="user_info" >
       <h1>
-        <%= t "user.id" %>
-        <%= @user.id %><br>
-        <%= t "user.name" %>
-        <%= @user.name %><br>
-        <%= t "user.email" %>
-        <%= @user.email %><br>
-        <%= t "user.skill" %>
-        <% @user.userskills.each do |f| %>
-          <li>
-            <%= f.skill.name %>|
-            <%= t "skill.level" %>
-            <%= f.level %>|
-            <%= t "skill.year" %>
-            <%= f.year %>
-          </li>
+        <ul>
+          <%= t "user.id" %>
+          <%= @user.id %>
+        </ul>
+        <ul>
+          <%= t "user.name" %>
+          <%= @user.name %>
+        </ul>
+        <ul>
+          <%= t "user.email" %>
+          <%= @user.email %>
+        </ul>
+        <ul>
+          <%= t "user.position" %>
+          <% @user.positions.each do |position| %>
+            <%= position.name %>
+          <% end %>
+        </ul>
+        <% unless @user.team_id == nil %>
+          <ul>
+            <%= t "user.team" %>
+            <%= @user.team.name %>
+          </ul>
         <% end %>
+        <ul>
+          <%= t "user.skill" %>
+          <% @user.userskills.each do |f| %>
+            <li>
+              <%= f.skill.name %>|
+              <%= t "skill.level" %>
+              <%= f.level %>|
+              <%= t "skill.year" %>
+              <%= f.year %>
+            </li>
+          <% end %>
+        </ul>
         <%= link_to "skill.add", user_add_skills_path(@user), class:"btn btn-success btn-sm" %>
       </h1>
     </section>

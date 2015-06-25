@@ -22,14 +22,22 @@
             <%= position.name %>
           <% end %>
         </ul>
-        <ul>
-          <%= t "user.team" %>
-          <%= @user.team.name %>
-        </ul>
+        <% unless @user.team_id == nil %>
+          <ul>
+            <%= t "user.team" %>
+            <%= @user.team.name %>
+          </ul>
+        <% end %>
         <ul>
           <%= t "user.skill" %>
-          <% @user.skills.each do |skill| %>
-            <li><%= skill.name %></li>
+          <% @user.userskills.each do |f| %>
+            <li>
+              <%= f.skill.name %>|
+              <%= t "skill.level" %>
+              <%= f.level %>|
+              <%= t "skill.year" %>
+              <%= f.year %>
+            </li>
           <% end %>
         </ul>
       </h1>
@@ -38,3 +46,13 @@
 </div>
 <%= link_to t("user.edit"), edit_admin_user_path(@user), class:"btn btn-success btn-sm" %><br />
 <%= link_to t("back"), admin_users_path, class: "glyphicon glyphicon-step-backward" %>
+
+
+<% @user.userskills.each do |f| %>
+  <li>
+    <%= f.skill.name %>|
+    <%= t "skill.level" %>
+    <%= f.level %>|
+    <%= t "skill.year" %>
+    <%= f.year %>
+  </li>
