@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   belongs_to :team
   has_one :leading_team, foreign_key: "leader_id"
-  
+
   accepts_nested_attributes_for :userskills, allow_destroy: true
   accepts_nested_attributes_for :user_positions, allow_destroy: true
 
@@ -46,16 +46,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  private
-  def log_create
-    create_activity_log Settings.activities.create, self.class.name
-  end
-
-  def log_update
-    create_activity_log Settings.activities.update, self.class.name
-  end
-
-  def log_destroy
-    create_activity_log Settings.activities.destroy, self.class.name
-  end
 end
